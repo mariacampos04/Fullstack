@@ -11,9 +11,12 @@ const dummyContacts = [
     { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
   ];
 
+ //ContactList setSelectedContactId = {setSelectedContactId} ???????? Number 9 in Select contact view
 
 //creating a component; default export from the file
-export default function ContactList(){
+export default function ContactList({setSelectedContactId}){ //passing the setSelectedContactId to ContactList component
+    //Deconstructing function from props from withing the ContactList component
+   
 
     //useState hook
     const [contacts, setContacts] = useState(dummyContacts);
@@ -31,7 +34,10 @@ export default function ContactList(){
                 console.log(error);
             }
         }
+
+       
         //console.log("Contacts: ", contacts);
+
         fetchContacts()
     }, [])
 
@@ -48,7 +54,7 @@ export default function ContactList(){
                     <td>Email</td>
                     <td>Phone</td>
                 </tr>
-                {//"escaaping" into Javascript and mapping over contacts array. For each contact return a ContactRow component
+                {//"escaping" into Javascript and mapping over contacts array. For each contact return a ContactRow component
                     contacts.map((contact) => {
                     return <ContactRow key = {contact.id} contact = {contact}
                     />;
@@ -58,5 +64,5 @@ export default function ContactList(){
         </table>
     );
 
-
 }
+
