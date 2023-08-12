@@ -27,7 +27,7 @@ export default function ContactList({setSelectedContactId}){ //passing the setSe
         async function fetchContacts(){
             try{ 
                 //fetchign API
-                const response = await fetch('http://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/');
+                const response = await fetch('https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/');
                 const result = await response.json();
                 setContacts(result);
             } catch(error){
@@ -65,4 +65,3 @@ export default function ContactList({setSelectedContactId}){ //passing the setSe
     );
 
 }
-
