@@ -1,6 +1,7 @@
 const client = require('./client');
 const util = require('util');
 
+
 // GET - /api/board-games - get all board games
 async function getAllBoardGames() {
     try {
